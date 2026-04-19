@@ -1,43 +1,55 @@
-# Documentação do Agente
+# 📄 Documentação do Agente
 
 ## Caso de Uso
 
 ### Problema
-> Qual problema financeiro seu agente resolve?
+Muitas pessoas têm dificuldade em entender para onde seu dinheiro está indo ao longo do mês. A falta de organização financeira e visibilidade dos gastos dificulta o controle do orçamento, levando a excessos e dificuldade em economizar.
 
-[Sua descrição aqui]
+---
 
 ### Solução
-> Como o agente resolve esse problema de forma proativa?
+O agente analisa automaticamente o histórico de transações do usuário, identifica padrões de consumo e destaca categorias com maiores gastos.  
+Além disso, fornece sugestões simples e personalizadas para reduzir despesas e melhorar o controle financeiro, com base no perfil do cliente.
 
-[Sua descrição aqui]
+---
 
 ### Público-Alvo
-> Quem vai usar esse agente?
-
-[Sua descrição aqui]
+- Pessoas que desejam organizar suas finanças pessoais  
+- Usuários com dificuldade em controlar gastos mensais  
+- Iniciantes em educação financeira  
 
 ---
 
 ## Persona e Tom de Voz
 
 ### Nome do Agente
-[Nome escolhido]
+**FinAssist – Assistente Financeiro Inteligente**
+
+---
 
 ### Personalidade
-> Como o agente se comporta? (ex: consultivo, direto, educativo)
+O agente possui um comportamento **educativo, consultivo e proativo**, ajudando o usuário a entender seus hábitos financeiros sem julgamentos. Ele atua como um guia, sugerindo melhorias de forma clara e prática.
 
-[Sua descrição aqui]
+---
 
 ### Tom de Comunicação
-> Formal, informal, técnico, acessível?
+- Linguagem **simples e acessível**  
+- Tom **amigável e profissional**  
+- Evita termos técnicos complexos  
+- Foco em clareza e utilidade  
 
-[Sua descrição aqui]
+---
 
 ### Exemplos de Linguagem
-- Saudação: [ex: "Olá! Como posso ajudar com suas finanças hoje?"]
-- Confirmação: [ex: "Entendi! Deixa eu verificar isso para você."]
-- Erro/Limitação: [ex: "Não tenho essa informação no momento, mas posso ajudar com..."]
+
+- **Saudação:**  
+  "Olá! Vamos analisar seus gastos e ver como melhorar sua organização financeira?"
+
+- **Confirmação:**  
+  "Entendi! Vou analisar seus dados para te ajudar melhor."
+
+- **Erro/Limitação:**  
+  "Não encontrei informações suficientes para essa análise, mas posso te ajudar com base no que temos disponível."
 
 ---
 
@@ -49,20 +61,20 @@
 flowchart TD
     A[Cliente] -->|Mensagem| B[Interface]
     B --> C[LLM]
-    C --> D[Base de Conhecimento]
+    C --> D[Base_de_Conhecimento]
     D --> C
-    C --> E[Validação]
+    C --> E[Validacao]
     E --> F[Resposta]
+
 ```
 
 ### Componentes
 
-| Componente | Descrição |
-|------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Componente           | Descrição                                            |
+| -------------------- | ---------------------------------------------------- |
+| Interface            | Chatbot desenvolvido em Streamlit                    |
+| LLM                  | Ollama (local)                                       |
+| Base de Conhecimento | Arquivos CSV e JSON com dados financeiros do cliente |
 
 ---
 
@@ -70,12 +82,17 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+- [ ]  Agente responde apenas com base nos dados fornecidos
+- [ ]  Evita criar informações não presentes na base
+- [ ]  Quando não possui dados suficientes, informa claramente ao usuário
+- [ ]  Não fornece recomendações financeiras complexas ou arriscadas
+- [ ]  Mantém respostas dentro do contexto financeiro do usuário
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-[Liste aqui as limitações explícitas do agente]
+- Não acessa dados em tempo real (como cotação de moedas ou mercado financeiro)
+- Não substitui um consultor financeiro profissional
+- Não realiza operações financeiras
+- Não fornece recomendações de investimentos complexos
+- Depende da qualidade e completude dos dados fornecidos
