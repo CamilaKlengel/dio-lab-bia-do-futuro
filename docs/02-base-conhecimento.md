@@ -43,16 +43,13 @@ Os arquivos CSV e JSON são carregados no início da aplicação utilizando Pyth
 - O arquivo `transacoes.csv` é carregado com a biblioteca **pandas**  
 - O arquivo `perfil_investidor.json` é carregado como um dicionário Python
 
-```python 
-import pandas as pd
+```python
+
 import json
+import pandas as pd
 
-# CSVs
-transacoes = pd.read_csv('data/transacoes.csv')
-
-# JSONs
-with open ('data/perfil_investidor.jason', 'r', encoding-'utf-8') as f:
-  perfil = json.load(f)
+perfil = json.load(open('./data/perfil_investidor.json'))
+transacoes = pd.read_csv('./data/transacoes.csv')
 
 ```
 ---
